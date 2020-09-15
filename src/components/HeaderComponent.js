@@ -75,6 +75,7 @@ class Header extends Component {
                   <div className="row row-header">
                       <div className="col-12 col-sm-6">
                           <h1>Colegio en Linea</h1>
+                          <h2>Hello World!</h2>
                           <p>Bienvenido al portal del Colegio Sabana para los alumnos de transicion</p>
                       </div>
                   </div>
