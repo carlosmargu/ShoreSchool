@@ -48,8 +48,6 @@ class Header extends Component {
           event.preventDefault();
         }
 
-
-
     getData (){
        axios.get(`https://api.npoint.io/e78e776fe063d5c9af41`, {})
            .then(res => {
