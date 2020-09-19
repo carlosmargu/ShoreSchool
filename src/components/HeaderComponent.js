@@ -38,16 +38,17 @@ class Header extends Component {
         this.state.userItems.map(usuario => {
            usuario1.push(usuario.user);
         })
-        for(let usu of usuario1){
-          if(usu==usuario){
+
+          if(usuario1.filter(usuario)){
             console.log("usuario correcto");
-            break;
+
           }else{
             console.log("usuario incorrecto");
           }
+          event.preventDefault();
         }
-        event.preventDefault();
-    }
+
+
 
     getData (){
        axios.get(`https://api.npoint.io/e78e776fe063d5c9af41`, {})
@@ -129,7 +130,7 @@ class Header extends Component {
                             Remember me
                         </Label>
                     </FormGroup>
-                    <Button type="submit" value="submit" color="primary" onClick="{handleLogin()}">Login</Button>
+                    <Button type="submit" value="submit" color="primary" onClick="{()=>handleLogin()}">Login</Button>
                   </Form>
               </ModalBody>
           </Modal>
