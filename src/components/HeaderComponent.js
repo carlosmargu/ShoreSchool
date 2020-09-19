@@ -9,7 +9,8 @@ class Header extends Component {
        this.toggleNav = this.toggleNav.bind(this);
        this.state = {
          isNavOpen: false,
-         isModalOpen: false
+         isModalOpen: false,
+         userItems: []
        };
        this.toggleModal = this.toggleModal.bind(this);
        this.toggleNav = this.toggleNav.bind(this);
@@ -32,8 +33,25 @@ class Header extends Component {
         this.toggleModal();
         alert("Bienvenido al Colegio");
         event.preventDefault();
-
     }
+
+    getData (){
+       axios.get(`https://api.npoint.io/e78e776fe063d5c9af41`, {})
+           .then(res => {
+                 const data = res.data
+                 const user = data.map(user => 
+
+                 )
+                 this.setState({
+                   users: user
+                 })
+               }).catch((error) => {
+                   console.log(error)
+               })
+           }
+   componentDidMount() {
+      this.getData()
+      }
   render() {
     return(
       <React.Fragment>
