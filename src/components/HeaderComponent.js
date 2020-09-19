@@ -39,7 +39,7 @@ class Header extends Component {
            usuario1.push(usuario.user);
         })
 
-          if(usuario1.filter(usuario)){
+          if(usuario1.filter(usuario)==usuario){
             console.log("usuario correcto");
 
           }else{
@@ -130,7 +130,7 @@ class Header extends Component {
                             Remember me
                         </Label>
                     </FormGroup>
-                    <Button type="submit" value="submit" color="primary" onClick="{()=>handleLogin()}">Login</Button>
+                    <Button type="submit" value="submit" color="primary" onClick={this.handleLogin}>Login</Button>
                   </Form>
               </ModalBody>
           </Modal>
