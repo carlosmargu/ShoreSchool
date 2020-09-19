@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron,Button, Modal, ModalHeader, ModalBody,Form, FormGroup, Input, Label } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
 
 class Header extends Component {
+
   constructor(props) {
        super(props);
 
@@ -38,14 +40,9 @@ class Header extends Component {
     getData (){
        axios.get(`https://api.npoint.io/e78e776fe063d5c9af41`, {})
            .then(res => {
-                 const data = res.data
-                 const user = data.map(user => 
-
-                 )
-                 this.setState({
-                   users: user
-                 })
-               }).catch((error) => {
+                 this.setState({userItems:res.data})
+               })
+            .catch((error) => {
                    console.log(error)
                })
            }
