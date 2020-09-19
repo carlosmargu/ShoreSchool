@@ -33,7 +33,19 @@ class Header extends Component {
 
      handleLogin(event) {
         this.toggleModal();
-        alert("Bienvenido al Colegio");
+        const usuario = this.username.value;
+        let usuario1 = [];
+        this.state.userItems.map(usuario => {
+           usuario1.push(usuario.user);
+        })
+        for(let usu of usuario1){
+          if(usu==usuario){
+            console.log("usuario correcto");
+            break;
+          }else{
+            console.log("usuario incorrecto");
+          }
+        }
         event.preventDefault();
     }
 
@@ -117,7 +129,7 @@ class Header extends Component {
                             Remember me
                         </Label>
                     </FormGroup>
-                    <Button type="submit" value="submit" color="primary">Login</Button>
+                    <Button type="submit" value="submit" color="primary" onClick="{handleLogin()}">Login</Button>
                   </Form>
               </ModalBody>
           </Modal>
