@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron,Button, Modal, ModalHeader, ModalBody,Form, FormGroup, Input, Label } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
 class Header extends Component {
 
@@ -12,7 +13,8 @@ class Header extends Component {
        this.state = {
          isNavOpen: false,
          isModalOpen: false,
-         userItems: []
+         userItems: [],
+         isLogged : false
        };
        this.toggleModal = this.toggleModal.bind(this);
        this.toggleNav = this.toggleNav.bind(this);
@@ -32,21 +34,22 @@ class Header extends Component {
      }
 
      handleLogin(event) {
+      event.preventDefault();
         this.toggleModal();
         const usuario = this.username.value;
-        let usuario1 = [];
-        this.state.userItems.map(usuario => {
-           usuario1.push(usuario.user);
-        })
-
-          if(usuario1.filter(usuario)==usuario){
-            console.log("usuario correcto");
-
-          }else{
-            console.log("usuario incorrecto");
+        const password = this.password.value;
+        const usuario1=this.state.userItems.filter(usu=>usuario===usu.user);
+          if(usuario1.length > 0){
+            if(usuario1[0].pass===password){
+              console.log("Usuario y contraseña correcto")
+              this.setState({isLogged: true});
+              //this.props.history.go('/index');
+            }else{
+              console.log("Usuario o contraseña incorrectos")
+            }
           }
-          event.preventDefault();
         }
+
 
     getData (){
        axios.get(`https://api.npoint.io/e78e776fe063d5c9af41`, {})
@@ -62,6 +65,7 @@ class Header extends Component {
       }
   render() {
     return(
+
       <React.Fragment>
           <Navbar dark expand="md">
             <div className="container">
