@@ -42,7 +42,7 @@ class Header extends Component {
           if(usuario1.length > 0){
             if(usuario1[0].pass===password){
               console.log("Usuario y contraseña correcto")
-              this.setState({isLogged: true});
+              this.props.handleLogin();
               //this.props.history.go('/index');
             }else{
               console.log("Usuario o contraseña incorrectos")
@@ -67,14 +67,17 @@ class Header extends Component {
     return(
 
       <React.Fragment>
-          <Navbar dark expand="md">
-            <div className="container">
+      
+        <Navbar dark expand="md">
+          <div className="container">
             <NavbarToggler onClick={this.toggleNav} />
               <NavbarBrand className="mr-auto" href="#"></NavbarBrand>
                 <Collapse isOpen={this.state.isNavOpen} navbar>
+                
                     <Nav navbar>
+                    {this.props.isLogged? (   <>
                       <NavItem>
-                        <NavLink className="nav-link"  to='/home'> Inicio</NavLink>
+                        <NavLink className="nav-link" to='/index'>Inicio</NavLink>
                       </NavItem>
                       <NavItem>
                         <NavLink className="nav-link" to='/aboutus'>Semanas</NavLink>
@@ -91,6 +94,19 @@ class Header extends Component {
                       <NavItem>
                         <NavLink className="nav-link" to='/contactus'> Comunicados</NavLink>
                       </NavItem>
+                      </>
+                      ) : (<> 
+                      <NavItem>
+                        <NavLink className="nav-link"  to='/'> Inicio</NavLink>
+                      </NavItem>
+                      <NavItem>
+                        <NavLink className="nav-link"  to='/contactus'> Contacto</NavLink>
+                      </NavItem>
+                      <NavItem>
+                        <NavLink className="nav-link"  to='/aboutus'> Sobre nosotros</NavLink>
+                      </NavItem>
+                      </>)}
+                      
                     </Nav>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
@@ -100,6 +116,7 @@ class Header extends Component {
                   </Collapse>
               </div>
             </Navbar>
+          
           <Jumbotron>
               <div className="container">
                   <div className="row row-header">

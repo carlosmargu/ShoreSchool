@@ -8,17 +8,23 @@ class Main extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {isLogged:false}
   }
   componentDidMount (){
     console.log("Hola" + this.state.isLogged)
   }
+
+  login = ()=>{
+    this.setState({isLogged:true})
+  }
+
   render() {
    return (
      
      <div>
-      (this.state.islogged ?<Redirect to="/index" /> : "")
+      {this.state.isLogged ?<Redirect to="/index" /> : ""}
 
-       <Header />
+       <Header handleLogin={this.login} isLogged={this.state.isLogged}/>
        <Switch location={this.props.location}>
  
          <Route path='/index' component={() => <Home />} />
