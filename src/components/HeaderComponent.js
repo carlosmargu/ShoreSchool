@@ -45,10 +45,12 @@ class Header extends Component {
               this.props.handleLogin();
               //this.props.history.go('/index');
             }else{
-              console.log("Usuario o contraseña incorrectos")
+              console.log("Contraseña incorrectos")
+            }
+            }else{
+              console.log("Usuario no existe")
             }
           }
-        }
 
 
     getData (){
