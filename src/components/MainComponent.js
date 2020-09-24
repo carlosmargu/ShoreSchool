@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Home from './HomeComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
-import AboutUs from './AboutUsComponent';
+import ContactUs from './ContactUsComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
 class Main extends Component {
@@ -29,7 +29,7 @@ class Main extends Component {
        <Switch location={this.props.location}>
 
          <Route path='/index' component={() => <Home />} />
-         <Route path='/contacto' component={() => <AboutUs />} />
+         <Route path='/contacto' component={() => <ContactUs />} />
          {/*<Route exact path="/inicio">   {isLogged ? <Redirect to="/dashboard" /> : <PublicHomePage />} </Route>*/}
        </Switch>
        <Footer />
