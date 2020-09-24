@@ -4,7 +4,7 @@ import './AboutUsComponent.css';
 class AboutUs extends Component {
     render() {
         return (
-            <body>
+            <div>
                 <section className="contact">
                     <div className="content">
                         <h2>Sobre Nosotros</h2>
@@ -59,7 +59,7 @@ class AboutUs extends Component {
                         </div>
                     </div>
                 </section>
-            </body>
+            </div>
 
         );
     }
