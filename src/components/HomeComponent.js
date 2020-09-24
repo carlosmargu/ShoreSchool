@@ -1,9 +1,21 @@
 import React from 'react';
-
+import {Jumbotron } from 'reactstrap';
 
 
 function Home(props) {
     return(
+      <div>
+        <Jumbotron>
+            <div className="container">
+                <div className="row row-header">
+                    <div className="col-12 col-sm-6">
+                        <h1>Colegio en Linea</h1>
+                        <h2>Nooo </h2>
+                        <p>Bienvenido al portal del Colegio Sabana para los alumnos de transicion</p>
+                    </div>
+                </div>
+            </div>
+        </Jumbotron>
         <div className="container">
             <div className="row align-items-start">
                 <div className="col-1 col-md m-1">
@@ -21,6 +33,7 @@ function Home(props) {
                 </div>
             </div>
         </div>
+      </div>
     );
 }
 

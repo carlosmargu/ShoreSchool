@@ -69,13 +69,13 @@ class Header extends Component {
     return(
 
       <React.Fragment>
-      
+
         <Navbar dark expand="md">
           <div className="container">
             <NavbarToggler onClick={this.toggleNav} />
               <NavbarBrand className="mr-auto" href="#"></NavbarBrand>
                 <Collapse isOpen={this.state.isNavOpen} navbar>
-                
+
                     <Nav navbar>
                     {this.props.isLogged? (   <>
                       <NavItem>
@@ -97,18 +97,18 @@ class Header extends Component {
                         <NavLink className="nav-link" to='/contactus'> Comunicados</NavLink>
                       </NavItem>
                       </>
-                      ) : (<> 
+                      ) : (<>
                       <NavItem>
                         <NavLink className="nav-link"  to='/'> Inicio</NavLink>
                       </NavItem>
                       <NavItem>
-                        <NavLink className="nav-link"  to='/contactus'> Contacto</NavLink>
+                        <NavLink className="nav-link"  to='/contacto'> Contacto</NavLink>
                       </NavItem>
                       <NavItem>
                         <NavLink className="nav-link"  to='/aboutus'> Sobre nosotros</NavLink>
                       </NavItem>
                       </>)}
-                      
+
                     </Nav>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
@@ -118,18 +118,7 @@ class Header extends Component {
                   </Collapse>
               </div>
             </Navbar>
-          
-          <Jumbotron>
-              <div className="container">
-                  <div className="row row-header">
-                      <div className="col-12 col-sm-6">
-                          <h1>Colegio en Linea</h1>
-                          <h2>Nooo </h2>
-                          <p>Bienvenido al portal del Colegio Sabana para los alumnos de transicion</p>
-                      </div>
-                  </div>
-              </div>
-          </Jumbotron>
+
           <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
               <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
               <ModalBody>

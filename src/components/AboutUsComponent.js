@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './AboutUsComponent.css';
 
 class AboutUs extends Component {
     render() {
@@ -9,11 +10,11 @@ class AboutUs extends Component {
                         <h2>Sobre Nosotros</h2>
                         <p>loremipsum dolor sit amet, consectetur adipis</p>
                     </div>
-                    <div className="container">
+                    <div className="containerflex">
                         <div className="contactInfo">
                             <div className="box">
                                 <div className="icon"><i className="fa fa-map-marker" aria-hidden="true"></i>
-                                    <div className="text"> 
+                                    <div className="text">
                                         <h3>Dirección</h3>
                                         <p>Calle 12 #233-34A <br></br> Funza - Cundinamarca</p>
                                     </div>
@@ -63,3 +64,4 @@ class AboutUs extends Component {
         );
     }
 }
+export default AboutUs;
