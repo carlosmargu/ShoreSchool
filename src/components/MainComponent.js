@@ -15,8 +15,9 @@ class Main extends Component {
     console.log("Hola" + this.state.isLogged)
   }
 
-  login = ()=>{
-    this.setState({isLogged:true})
+  login = (username,imageUrl)=>{
+    this.setState({isLogged:true,username,imageUrl})
+
   }
 
   render() {
@@ -28,7 +29,7 @@ class Main extends Component {
        <Header handleLogin={this.login} isLogged={this.state.isLogged}/>
        <Switch location={this.props.location}>
 
-         <Route path='/index' component={() => <Home />} />
+         <Route path='/index' component={() => <Home username={this.state.username} imageUrl={this.state.imageUrl}/>} />
          <Route path='/contacto' component={() => <ContactUs />} />
          {/*<Route exact path="/inicio">   {isLogged ? <Redirect to="/dashboard" /> : <PublicHomePage />} </Route>*/}
        </Switch>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Jumbotron } from 'reactstrap';
-
+import './HomeComponent.css'
 
 function Home(props) {
     return(
@@ -18,19 +18,13 @@ function Home(props) {
         </Jumbotron>
         <div className="container">
             <div className="row align-items-start">
+                <img className="profile-photo" src={props.imageUrl}/>
                 <div className="col-1 col-md m-1">
-                <h1>Carlos Andres Martinez <a href="http://www.google.com" class="material-icons floating-btn">attach_file</a></h1>
+                
+                <h1 className="profile-user">{props.username} <a href="http://www.google.com" class="material-icons floating-btn">attach_file</a></h1>
+                
                 </div>
-            </div>
-            <div className="row align-items-start">
-                <div className="col-1 col-md m-1">
-                <h1>Federico Reina <a href="http://www.google.com" class="material-icons floating-btn">attach_file</a></h1>
-                </div>
-            </div>
-            <div className="row align-items-start">
-                <div className="col-1 col-md m-1">
-                <h1>Oscar Vargas <a href="http://www.google.com" class="material-icons floating-btn">attach_file</a></h1>
-                </div>
+                
             </div>
         </div>
       </div>

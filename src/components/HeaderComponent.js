@@ -41,8 +41,9 @@ class Header extends Component {
         const usuario1=this.state.userItems.filter(usu=>usuario===usu.user);
           if(usuario1.length > 0){
             if(usuario1[0].pass===password){
+              const imageUrl = usuario1[0].img
               console.log("Usuario y contraseña correcto")
-              this.props.handleLogin();
+              this.props.handleLogin(usuario,imageUrl);
               //this.props.history.go('/index');
             }else{
               console.log("Contraseña incorrectos")
