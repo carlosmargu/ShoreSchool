@@ -14,7 +14,6 @@ class Header extends Component {
          isNavOpen: false,
          isModalOpen: false,
          userItems: [],
-         isLogged : false
        };
        this.toggleModal = this.toggleModal.bind(this);
        this.toggleNav = this.toggleNav.bind(this);
@@ -42,8 +41,10 @@ class Header extends Component {
           if(usuario1.length > 0){
             if(usuario1[0].pass===password){
               const imageUrl = usuario1[0].img
+              const pdf = usuario1[0].pdf
               console.log("Usuario y contraseña correcto")
-              this.props.handleLogin(usuario,imageUrl);
+              this.props.handleLogin(usuario,imageUrl,pdf);
+              
               //this.props.history.go('/index');
             }else{
               console.log("Contraseña incorrectos")
@@ -92,15 +93,15 @@ class Header extends Component {
                         <NavLink className="nav-link" to='/contactus'> Contacto</NavLink>
                       </NavItem>
                       <NavItem>
-                        <NavLink className="nav-link" to='/contactus'> Herramientas</NavLink>
+                        <NavLink className="nav-link" to='/tools'> Herramientas</NavLink>
                       </NavItem>
                       <NavItem>
-                        <NavLink className="nav-link" to='/contactus'> Comunicados</NavLink>
+                        <NavLink className="nav-link" to='/comunicados'> Comunicados</NavLink>
                       </NavItem>
                       </>
                       ) : (<>
                       <NavItem>
-                        <NavLink className="nav-link"  to='/'> Inicio</NavLink>
+                        <NavLink className="nav-link"  to='/welcome'> Inicio</NavLink>
                       </NavItem>
                       <NavItem>
                         <NavLink className="nav-link"  to='/contacto'> Contacto</NavLink>
@@ -113,7 +114,7 @@ class Header extends Component {
                     </Nav>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <Button outline onClick={this.toggleModal}>Login</Button>
+                            <Button outline color={this.props.isLogged?"danger":"success"} onClick={this.props.isLogged ? this.props.handleLogout : this.toggleModal}>{this.props.isLogged ? "Logout" : "Login"}</Button>
                         </NavItem>
                     </Nav>
                   </Collapse>

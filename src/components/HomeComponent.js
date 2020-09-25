@@ -1,5 +1,5 @@
 import React from 'react';
-import {Jumbotron } from 'reactstrap';
+import {Button, Jumbotron } from 'reactstrap';
 import './HomeComponent.css'
 
 function Home(props) {
@@ -21,7 +21,7 @@ function Home(props) {
                 <img className="profile-photo" src={props.imageUrl}/>
                 <div className="col-1 col-md m-1">
                 
-                <h1 className="profile-user">{props.username} <a href="http://www.google.com" class="material-icons floating-btn">attach_file</a></h1>
+                <h1 className="profile-user">{props.username} <a href={props.pdf} class="material-icons floating-btn">attach_file</a></h1>
                 
                 </div>
                 
