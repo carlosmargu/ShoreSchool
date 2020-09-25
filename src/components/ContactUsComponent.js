@@ -38,7 +38,7 @@ class ContactUs extends Component {
                             </div>
                         </div>
                         <div className="contactForm">
-                            <form>
+                            <form onSubmit={()=>alert("Tu mensaje ha sido enviado, nos comunicaremos lo más pronto contigo")}>
                                 <h2>Envia un mensaje</h2>
                                 <div className="inputBox">
                                     <input type="text" name="" required="required" style={{"background-color":"#76B8F0"}}/>
