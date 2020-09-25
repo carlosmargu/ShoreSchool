@@ -9,7 +9,7 @@
     justify-content:center;
     align-items: center;
     flex-direction: column;
-    background-color:#76B8F0;
+    background-color:#fff;
 }
 
 .contact .content{
@@ -20,12 +20,14 @@
 .contact .content h2{
     font-size: 36px;
     font-weight:500;
-    color:#fff;
+    color:#000;
+    margin-bottom: 10px;
 }
 
 .contact .content p{
     font-weight:300;
-    color:#fff;
+    color:#000;
+    margin-bottom: 10%;
 }
 
 .containerflex{
@@ -51,19 +53,20 @@
 .containerflex .contact .box .icon{
     min-width: 60px;
     height: 60px;
-    background: #fff;
+    background: #000;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     font-size: 22px;
+    color: #000;
 }
 
 .containerflex .contact .box .icon .text {
     display: flex;
     margin-left: 20px;
     font-size: 16px;
-    color: #fff;
+    color: #000;
     flex-direction: column;
     font-weight:300;
 }
@@ -76,12 +79,15 @@
 .contactForm{
     width: 40%;
     padding: 40px;
-    background-color: #fff;
+    background-color: #76B8F0;
+    border-radius:10px;
 }
+
+
 
 .contactForm h2{
     font-size: 30px;
-    color: #333;
+    color: #fff;
     font-weight: 500;
 }
 
@@ -111,7 +117,7 @@
     margin: 10px 0;
     pointer-events: none;
     transition: 0.5s;
-    color: #666;
+    color: #fff;
 }
 
 .contactForm .inputBox input:focus ~ span,
@@ -125,13 +131,15 @@
 
 .contactForm .inputBox input[type="submit"] {
     width: 100px;
-    background: #00bcd4;
+    background: #195385;
     color: #fff;
     border: none;
     cursor: pointer;
     padding: 10px;
     font-size: 18px;
+    border-radius: 10px;
 }
+
 
 @media (max-width: 991px) {
     .contact{

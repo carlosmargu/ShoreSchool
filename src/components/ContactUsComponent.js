@@ -7,31 +7,31 @@ class ContactUs extends Component {
             <div>
                 <section className="contact">
                     <div className="content">
-                        <h2>Sobre Nosotros</h2>
-                        <p>loremipsum dolor sit amet, consectetur adipis</p>
+                        <h2>Contáctanos</h2>
+                        <p>Si quieres un desarrollo para tu institución educativa, no dudes en llenar el formulario presentado a continuación y nos contactaremos pronto.</p>
                     </div>
                     <div className="containerflex">
                         <div className="contactInfo">
                             <div className="box">
-                                <div className="icon"><i className="fa fa-map-marker" aria-hidden="true"></i>
-                                    <div className="text">
-                                        <h3>Dirección</h3>
+                                <div className="icon" style={{color:"#000"}}>
+                                    <div className="text" style={{color: "#000"}}>
+                                        <h3>Dirección <i className="fa fa-map-marker fa-1.5x" aria-hidden="true"></i></h3>
                                         <p>Calle 12 #233-34A <br></br> Funza - Cundinamarca</p>
                                     </div>
                                 </div>
                                 <div className="box">
-                                    <div className="icon"><i className="fa fa-phone" aria-hidden="true"></i>
-                                        <div className="text">
-                                            <h3>Phone</h3>
+                                    <div className="icon" style={{color:"#000"}}>
+                                        <div className="text" style={{color: "#000"}}>
+                                            <h3>Telefono <i className="fa fa-phone fa-1.5x" aria-hidden="true"></i></h3>
                                             <p>822564372</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="box">
-                                    <div className="icon"><i className="fa fa-envelope-o" aria-hidden="true"></i>
-                                        <div className="text">
-                                            <h3>Email</h3>
-                                            <p>colegio@gmail.com</p>
+                                    <div className="icon" style={{color: "#000"}}>
+                                        <div className="text" style={{color: "#000"}}>
+                                            <h3>Email <i className="fa fa-envelope-o fa-1.5x" aria-hidden="true"></i></h3>
+                                            <p>shoreschool@gmail.com</p>
                                         </div>
                                     </div>
                                 </div>
@@ -41,15 +41,15 @@ class ContactUs extends Component {
                             <form>
                                 <h2>Envia un mensaje</h2>
                                 <div className="inputBox">
-                                    <input type="text" name="" required="required" />
+                                    <input type="text" name="" required="required" style={{"background-color":"#76B8F0"}}/>
                                     <span>Nombre Completo</span>
                                 </div>
                                 <div className="inputBox">
-                                    <input type="text" name="" required="required" />
+                                    <input type="text" name="" required="required" style={{"background-color":"#76B8F0"}}/>
                                     <span>Email</span>
                                 </div>
                                 <div className="inputBox">
-                                    <textarea required="required"></textarea>
+                                    <textarea required="required" style={{"background-color":"#76B8F0"}}></textarea>
                                     <span>Escribe tu mensaje...</span>
                                 </div>
                                 <div className="inputBox">
