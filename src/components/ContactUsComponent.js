@@ -8,7 +8,7 @@ class ContactUs extends Component {
                 <section className="contact">
                     <div className="content">
                         <h2>Contáctanos</h2>
-                        <p>Si quieres un desarrollo para tu institución educativa, no dudes en llenar el formulario presentado a continuación y nos contactaremos pronto.</p>
+                        <p>Si deseas información sobre los procesos de matricula del colegio, no dudes en llenar el formulario.</p>
                     </div>
                     <div className="containerflex">
                         <div className="contactInfo">
@@ -31,7 +31,7 @@ class ContactUs extends Component {
                                     <div className="icon" style={{color: "#000"}}>
                                         <div className="text" style={{color: "#000"}}>
                                             <h3>Email <i className="fa fa-envelope-o fa-1.5x" aria-hidden="true"></i></h3>
-                                            <p>shoreschool@gmail.com</p>
+                                            <p>colegio@gmail.com</p>
                                         </div>
                                     </div>
                                 </div>
