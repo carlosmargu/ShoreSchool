@@ -20,11 +20,8 @@ function Home(props) {
             <div className="row align-items-start">
                 <img className="profile-photo" src={props.imageUrl}/>
                 <div className="col-1 col-md m-1">
-                
-                <h1 className="profile-user">{props.username} <a href={props.pdf} class="material-icons floating-btn">attach_file</a></h1>
-                
+                <h1 className="profile-user">{props.username} <a href={props.pdf} class="material-icons floating-btn">attach_file</a></h1>       
                 </div>
-                
             </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron,B
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import './HeaderComponent.css';
 
 class Header extends Component {
 
@@ -113,7 +114,7 @@ class Header extends Component {
                     </Nav>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <Button outline color={this.props.isLogged?"danger":"success"} onClick={this.props.isLogged ? this.props.handleLogout : this.toggleModal}>{this.props.isLogged ? "Logout" : "Login"}</Button>
+                            <Button color={this.props.isLogged?"danger":"success"} onClick={this.props.isLogged ? this.props.handleLogout : this.toggleModal}>{this.props.isLogged ? "Logout" : "Login"}</Button>
                         </NavItem>
                     </Nav>
                   </Collapse>
