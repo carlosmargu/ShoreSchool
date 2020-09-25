@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './FooterComponent.css';
 
 function Footer(props) {
     return(
-    <div className="footer">
+    <div className="footer textwhite">
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-4 col-sm-2">
@@ -18,14 +19,14 @@ function Footer(props) {
                     </ul>
                 </div>
                 <div className="col-7 col-sm-5">
-                    <h5>Colegio X</h5>
+                    <h5>Colegio Sabana</h5>
                     <address>
 		              FUNZA CUNDINAMARCA<br />
-		              Carlos - Oscar - Federico<br />
+		              Colegio Sabana<br />
 
 		              <i className="fa fa-phone fa-lg"></i>: +57 1111111<br />
 		              <i className="fa fa-envelope fa-lg"></i>: <a href="carlosmargu@unisabana.edu.co">
-                         carlosmargu@unisabana.edu.co</a>
+                         colegiosabana@gmail.com</a>
                     </address>
                 </div>
                 <div className="col-12 col-sm-4 align-self-center">

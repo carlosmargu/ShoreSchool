@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Home from './HomeComponent';
-import Header from './HeaderComponent';
-import Footer from './FooterComponent';
-import ContactUs from './ContactUsComponent';
+import Home from './Home/HomeComponent';
+import Header from './Header/HeaderComponent';
+import Footer from './Footer/FooterComponent';
+import ContactUs from './Contacto/ContactUsComponent';
+import Inicio from './Inicio/InicioComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
 class Main extends Component {
@@ -33,13 +34,15 @@ class Main extends Component {
    return (
 
      <div>
-      {this.state.isLogged ?<Redirect to="/index" /> : <Redirect to="/welcome" />}
+      {this.state.isLogged ?<Redirect to="/index" /> : <Redirect to="/inicio" />}
 
        <Header handleLogin={this.login} handleLogout={this.logout} isLogged={this.state.isLogged}/>
        <Switch location={this.props.location}>
 
          <Route path='/index' component={() => <Home username={this.state.username} imageUrl={this.state.imageUrl} pdf={this.state.pdf}/>} />
          <Route path='/contacto' component={() => <ContactUs />} />
+         <Route path='/inicio' component={() => <Inicio />} />
+
          {/*<Route exact path="/inicio">   {isLogged ? <Redirect to="/dashboard" /> : <PublicHomePage />} </Route>*/}
        </Switch>
        <Footer />

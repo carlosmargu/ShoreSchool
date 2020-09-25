@@ -1,0 +1,53 @@
+.footer{
+    background-color: #195385;
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+}
+
+.social-bar {
+	margin-top: 20px;
+	margin-left: 45px;
+	position: relative;
+	top: 40%;
+	font-size: 1.5rem;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	z-index: 100;
+}
+
+.icon {
+	color: white;
+	text-decoration: none;
+	padding: .7rem;
+	display: flex;
+	transition: all .5s;
+}
+
+.icon-facebook {
+	background: #2E406E;
+}
+
+.icon-twitter {
+	background: #339DC5;
+}
+
+.icon-youtube {
+	background: #E83028;
+}
+
+.icon-instagram {
+	background: #3F60A5;
+}
+
+.icon:first-child {
+	border-radius: 1rem 0 0 0;
+}
+
+.icon:last-child {
+	border-radius: 0 0 1rem 0;
+}
+
+.textwhite{
+  color: #FFFF;
+}

@@ -44,7 +44,7 @@ class Header extends Component {
               const pdf = usuario1[0].pdf
               console.log("Usuario y contraseña correcto")
               this.props.handleLogin(usuario,imageUrl,pdf);
-              
+
               //this.props.history.go('/index');
             }else{
               console.log("Contraseña incorrectos")
@@ -71,7 +71,6 @@ class Header extends Component {
     return(
 
       <React.Fragment>
-
         <Navbar dark expand="md">
           <div className="container">
             <NavbarToggler onClick={this.toggleNav} />
@@ -101,7 +100,7 @@ class Header extends Component {
                       </>
                       ) : (<>
                       <NavItem>
-                        <NavLink className="nav-link"  to='/welcome'> Inicio</NavLink>
+                        <NavLink className="nav-link"  to='/inicio'> Inicio</NavLink>
                       </NavItem>
                       <NavItem>
                         <NavLink className="nav-link"  to='/contacto'> Contacto</NavLink>
