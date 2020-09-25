@@ -4,6 +4,7 @@ import Header from './Header/HeaderComponent';
 import Footer from './Footer/FooterComponent';
 import ContactUs from './Contacto/ContactUsComponent';
 import Inicio from './Inicio/InicioComponent';
+import AboutUs from './Acerca/AboutUsComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
 class Main extends Component {
@@ -38,12 +39,10 @@ class Main extends Component {
 
        <Header handleLogin={this.login} handleLogout={this.logout} isLogged={this.state.isLogged}/>
        <Switch location={this.props.location}>
-
          <Route path='/index' component={() => <Home username={this.state.username} imageUrl={this.state.imageUrl} pdf={this.state.pdf}/>} />
          <Route path='/contacto' component={() => <ContactUs />} />
          <Route path='/inicio' component={() => <Inicio />} />
-
-         {/*<Route exact path="/inicio">   {isLogged ? <Redirect to="/dashboard" /> : <PublicHomePage />} </Route>*/}
+         <Route path='/acerca' component={() => <AboutUs />} />
        </Switch>
        <Footer />
      </div>

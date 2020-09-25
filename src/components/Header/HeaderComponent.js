@@ -107,7 +107,7 @@ class Header extends Component {
                         <NavLink className="nav-link"  to='/contacto'> Contacto</NavLink>
                       </NavItem>
                       <NavItem>
-                        <NavLink className="nav-link"  to='/aboutus'> Sobre nosotros</NavLink>
+                        <NavLink className="nav-link"  to='/acerca'> Sobre nosotros</NavLink>
                       </NavItem>
                       </>)}
 
