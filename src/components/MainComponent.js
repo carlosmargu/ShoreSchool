@@ -46,7 +46,7 @@ class Main extends Component {
          <Route path='/acerca' component={() => <AboutUs />} />
          <Route path='/comunicados' component={() => <Comunicados />} />
        </Switch>
-       <Footer />
+       <Footer isLogged={this.state.isLogged}/>
      </div>
    );
  }

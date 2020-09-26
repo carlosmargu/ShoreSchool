@@ -10,12 +10,19 @@ function Footer(props) {
                 <div className="col-4 col-sm-2">
                     <h5>Links</h5>
                     <ul className="list-unstyled">
-                    <li><Link to='/home'>Inicio</Link></li>
-                    <li><Link to='/aboutus'>Semanas</Link></li>
-                    <li><Link to='/aboutus'>Actividades Entregadas</Link></li>
-                    <li><Link to='/menu'>Contacto</Link></li>
-                    <li><Link to='/contactus'>Herramientas</Link></li>
-                    <li><Link to='/contactus'>Comunicados</Link></li>
+                    {props.isLogged?(<>
+                        <li><Link to='/home'>Inicio</Link></li>
+                        <li><Link to='/acerca'>Semanas</Link></li>
+                        <li><Link to='/menu'>Actividades Entregadas</Link></li>
+                        <li><Link to='/contacto'>Contacto</Link></li>
+                        <li><Link to='/tools'>Herramientas</Link></li>
+                        <li><Link to='/comunicados'>Comunicados</Link></li>
+                    </>) : (<>
+                        <li><Link to='/home'>Inicio</Link></li>
+                        <li><Link to='/contacto'>Contacto</Link></li>
+                        <li><Link to='/acerca'>Sobre nosotros</Link></li>
+                    </>)}
+                    
                     </ul>
                 </div>
                 <div className="col-7 col-sm-5">

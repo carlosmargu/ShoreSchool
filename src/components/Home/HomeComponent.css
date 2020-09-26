@@ -52,4 +52,21 @@
     margin:0px auto;
     background: #3591DE ;
     color:floralwhite;
+    grid-area: "jumbo";
+}
+
+.home-container{
+  display: grid;
+  grid-template-areas: 
+      "jumbo jumbo"
+      "profile calendar"
+  ;
+}
+
+.profile-data{
+  grid-area: "profile"
+}
+
+.calendar-data{
+  grid-area: "calendar"
 }
