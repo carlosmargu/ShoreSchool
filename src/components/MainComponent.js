@@ -5,6 +5,7 @@ import Footer from './Footer/FooterComponent';
 import ContactUs from './Contacto/ContactUsComponent';
 import Inicio from './Inicio/InicioComponent';
 import AboutUs from './Acerca/AboutUsComponent';
+import Comunicados from './Comunicados/Comunicados.js'
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
 class Main extends Component {
@@ -43,6 +44,7 @@ class Main extends Component {
          <Route path='/contacto' component={() => <ContactUs />} />
          <Route path='/inicio' component={() => <Inicio />} />
          <Route path='/acerca' component={() => <AboutUs />} />
+         <Route path='/comunicados' component={() => <Comunicados />} />
        </Switch>
        <Footer />
      </div>
