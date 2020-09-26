@@ -9,8 +9,8 @@ class AboutUs extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12">
-                        <h2>Business Growth Services</h2>
-                        <p className="p-heading p-large">We serve small and medium sized companies in all tech related industries with high quality growth services which are presented below</p>
+                        <h2>Colegio Sabana</h2>
+                        <p className="p-heading p-large">Somos una institución educativa que formamos líderes desde el año 2000</p>
                     </div>
                 </div>
                 <div className="row">
@@ -19,24 +19,24 @@ class AboutUs extends Component {
                         <div className="card">
                             <img className="card-image" src="https://i.ibb.co/7VZcnv2/services-icon-2.png" alt="alternative"/>
                             <div className="card-body">
-                                <h4 className="card-title">Opportunity Scan</h4>
-                                <p>Once the market analysis process is completed our staff will search for opportunities that are in reach</p>
+                                <h4 className="card-title">Oportunidad de crecer</h4>
+                                <p>Fomentamos la adquisición de un amplio conocimiento</p>
                             </div>
                         </div>
 
                         <div className="card">
                             <img className="card-image" src="https://i.ibb.co/BN3LJ84/services-icon-3.png" alt="alternative"/>
                             <div className="card-body">
-                                <h4 className="card-title">Action Plan</h4>
-                                <p>With all the information in place you will be presented with an action plan that your company needs to follow</p>
+                                <h4 className="card-title">Atención Integral</h4>
+                                <p>Conocedores de los diferentes tipos y estilos de aprendizaje</p>
                             </div>
                         </div>
 
                         <div className="card">
                             <img className="card-image" src="https://i.ibb.co/Wzc480x/services-icon-1.png" alt="alternative"/>
                             <div className="card-body">
-                                <h4 className="card-title">Action Plan</h4>
-                                <p>With all the information in place you will be presented with an action plan that your company needs to follow</p>
+                                <h4 className="card-title">Actividades en equipo</h4>
+                                <p>Promovemos el desarrollo de habilidades comunicativas</p>
                             </div>
                         </div>
                     </div>
@@ -49,9 +49,8 @@ class AboutUs extends Component {
                 <div className="row">
                     <div className="col-lg-6">
                         <div className="text-container">
-                            <h2>Design And Plan Your Business Growth Steps</h2>
-                            <p>Use our staff and our expertise to design and plan your business growth strategy. Evolo team is eager to advise you on the best opportunities that you should look into</p>
-                            <a className="btn-solid-reg popup-with-move-anim" href="#details-lightbox-1">LIGHTBOX</a>
+                            <h2>Misión</h2>
+                            <p>Somos un colegio que ofrece a la sociedad una propuesta educativa que tiene como objetivo la formación  integral del alumno (personal, social y transcendente) y una adecuada formación académica desde Infantil hasta Bachillerato,  desde la corresponsabilidad del Equipo Educativo y con la colaboración de sus familias.</p>
                         </div>
                     </div>
                     <div className="col-lg-6">
@@ -73,22 +72,8 @@ class AboutUs extends Component {
                     </div>
                     <div className="col-lg-6">
                         <div className="text-container">
-                            <h2>Search For Optimization Wherever Is Possible</h2>
-                            <ul className="list-unstyled li-space-lg">
-                                <li className="media">
-                                    <i className="fas fa-check"></i>
-                                    <div className="media-body">Basically we'll teach you step by step what you need to do</div>
-                                </li>
-                                <li className="media">
-                                    <i className="fas fa-check"></i>
-                                    <div className="media-body">In order to develop your company and reach new heights</div>
-                                </li>
-                                <li className="media">
-                                    <i className="fas fa-check"></i>
-                                    <div className="media-body">Everyone will be pleased from stakeholders to employees</div>
-                                </li>
-                            </ul>
-                            <a className="btn-solid-reg popup-with-move-anim" href="#details-lightbox-2">LIGHTBOX</a>
+                            <h2>Visión</h2>
+                            <p>En el año 2021 seremos un Colegio que forma y acompaña para la excelencia humana, desde su propuesta educativa orientada a la formación integral en la construcción de una sociedad justa y en paz, a través del compromiso social y ambiental</p>
                         </div>
                     </div>
                 </div>
