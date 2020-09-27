@@ -34,9 +34,9 @@ render() {
                 </div>
             </div>
         </Jumbotron>
-      <div className="home-container container">
+      <div className="home-container container row">
 
-        <div  className="container profile-data">
+        <div  className="container col-lg-8 profile-data col-sm-12">
             <div className="row align-items-start">
                 <img className="profile-photo" src={this.props.imageUrl}/>
                 <div className="col-1 col-md m-1">
@@ -45,7 +45,7 @@ render() {
                 </div>
             </div>
         </div>
-        <div className="calendar-data">
+        <div className="col-lg-4 col-sm-12 calendar-data align-items-end">
             <div className="row row-striped">
                 <div className="col-2 text-right">
                     {this.state.tareas.map(tarea =>

@@ -18,7 +18,7 @@ function Footer(props) {
                         <li><Link to='/tools'>Herramientas</Link></li>
                         <li><Link to='/comunicados'>Comunicados</Link></li>
                     </>) : (<>
-                        <li><Link to='/home'>Inicio</Link></li>
+                        <li><Link to='/inicio'>Inicio</Link></li>
                         <li><Link to='/contacto'>Contacto</Link></li>
                         <li><Link to='/acerca'>Sobre nosotros</Link></li>
                     </>)}

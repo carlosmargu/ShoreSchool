@@ -56,18 +56,21 @@
 }
 
 .home-container{
-  display: grid;
+  /* display: grid;
   grid-template-areas: 
       "profile calendar"
   ;
-  grid-template-columns: 4fr 3fr;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  grid-template-columns: 4fr 3fr; */
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .profile-data{
   grid-area: "profile";
-  
+  padding-left:15%;
+  padding-right:15%;
+  /* padding-top:10%; */
+  padding-bottom:10px;
 }
 
 .calendar-data{
