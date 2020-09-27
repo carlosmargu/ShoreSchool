@@ -9,9 +9,8 @@ function Home(props) {
             <div className="container">
                 <div className="row row-header">
                     <div className="col-12 col-sm-6">
-                        <h1>Colegio en Linea</h1>
-                        <h2>Nooo </h2>
-                        <p>Bienvenido al portal del Colegio Sabana para los alumnos de transicion</p>
+                        <h1>Colegio Sabana</h1>
+                        <p>Bienvenido al portal del Colegio Sabana</p>
                     </div>
                 </div>
             </div>
@@ -22,7 +21,7 @@ function Home(props) {
             <div className="row align-items-start">
                 <img className="profile-photo" src={props.imageUrl}/>
                 <div className="col-1 col-md m-1">
-                <h1 className="profile-user">{props.username} <a href={props.pdf} className="material-icons floating-btn">attach_file</a></h1>       
+                <h1 className="profile-user">{props.username} </h1>       
                 <h4 className="">Grado 503</h4>
                 </div>
             </div>
@@ -34,7 +33,7 @@ function Home(props) {
                     <h6>OCT</h6>
                 </div>
                 <div className="col-10">
-                    <h5 className="text-uppercase"><strong>Operations Meeting</strong></h5>
+                    <h3 className="text-uppercase"><strong>Operations Meeting</strong><a href={props.pdf} className="material-icons floating-btn boton1">cloud_download</a></h3>
                     <ul className="list-inline">
                         <li className="list-inline-item"><i className="fa fa-calendar-o" aria-hidden="true"></i> Friday</li>
                         <li className="list-inline-item"><i className="fa fa-clock-o" aria-hidden="true"></i> 2:30 PM - 4:00 PM</li>

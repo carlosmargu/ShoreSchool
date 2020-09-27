@@ -73,3 +73,7 @@
 .calendar-data{
   grid-area: "calendar"
 }
+
+.boton1{
+  margin-left: 0px;
+}

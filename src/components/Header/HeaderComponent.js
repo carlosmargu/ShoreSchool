@@ -84,7 +84,7 @@ class Header extends Component {
                         <NavLink className="nav-link" to='/index'>Inicio</NavLink>
                       </NavItem>
                       <NavItem>
-                        <NavLink className="nav-link" to='/acerca'>Semanas</NavLink>
+                        <NavLink className="nav-link" to='/semanas'>Semanas</NavLink>
                       </NavItem>
                       <NavItem>
                         <NavLink className="nav-link"  to='/menu'> Actividades Entregadas</NavLink>
