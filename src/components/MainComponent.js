@@ -17,20 +17,19 @@ class Main extends Component {
       isLogged:false,
       username:'',
       imageUrl:'',
-      pdf:''
+      pdf:'',
+      nombre:'',
+      grado:''
     }
   }
-  componentDidMount (){
-    console.log("Hola" + this.state.isLogged)
-  }
 
-  login = (username,imageUrl,pdf)=>{
-    this.setState({isLogged:true,username,imageUrl,pdf})
+  login = (username,imageUrl,pdf, nombre, grado)=>{
+    this.setState({isLogged:true,username,imageUrl,pdf, nombre, grado})
 
   }
 
   logout = ()=>{
-    this.setState({isLogged:false,username:'',imageUrl:'',pdf:''})
+    this.setState({isLogged:false,username:'',imageUrl:'',pdf:'', nombre:'', grado:''})
   }
 
   render() {
@@ -41,7 +40,7 @@ class Main extends Component {
 
        <Header handleLogin={this.login} handleLogout={this.logout} isLogged={this.state.isLogged}/>
        <Switch location={this.props.location}>
-         <Route path='/index' component={() => <Home username={this.state.username} imageUrl={this.state.imageUrl} pdf={this.state.pdf}/>} />
+         <Route path='/index' component={() => <Home username={this.state.username} imageUrl={this.state.imageUrl} pdf={this.state.pdf} nombre={this.state.nombre} grado={this.state.grado}/>} />
          <Route path='/contacto' component={() => <ContactUs />} />
          <Route path='/inicio' component={() => <Inicio />} />
          <Route path='/acerca' component={() => <AboutUs />} />

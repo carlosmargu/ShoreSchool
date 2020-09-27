@@ -43,8 +43,10 @@ class Header extends Component {
             if(usuario1[0].pass===password){
               const imageUrl = usuario1[0].img
               const pdf = usuario1[0].pdf
+              const nombre = usuario1[0].nombre
+              const grado = usuario1[0].grado
               console.log("Usuario y contraseña correcto")
-              this.props.handleLogin(usuario,imageUrl,pdf);
+              this.props.handleLogin(usuario,imageUrl,pdf,nombre,grado);
 
               //this.props.history.go('/index');
             }else{

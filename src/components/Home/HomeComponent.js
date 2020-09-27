@@ -1,8 +1,27 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Button, Jumbotron } from 'reactstrap';
 import './HomeComponent.css'
+import axios from 'axios'
 
-function Home(props) {
+class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            tareas:[]
+        }
+    }
+    
+    componentDidMount() {
+        axios.get(`https://api.npoint.io/4529b70a8255f93d8392`, {})
+            .then(res => {
+                  this.setState({tareas:res.data})
+            })
+             .catch((error) => {
+                    console.log(error)
+            })
+    }
+
+render() {
     return(
         <>
         <Jumbotron>
@@ -19,36 +38,46 @@ function Home(props) {
 
         <div  className="container profile-data">
             <div className="row align-items-start">
-                <img className="profile-photo" src={props.imageUrl}/>
+                <img className="profile-photo" src={this.props.imageUrl}/>
                 <div className="col-1 col-md m-1">
-                <h1 className="profile-user">{props.username} </h1>
-                <h4 className="">Grado 503</h4>
+                <h1 className="profile-user">{this.props.nombre} </h1>
+                <h4 className="">{this.props.grado}</h4>
                 </div>
             </div>
         </div>
         <div className="calendar-data">
             <div className="row row-striped">
                 <div className="col-2 text-right">
-                    <h5 className=""><span className="badge badge-secondary">27</span></h5>
-                    <h6>OCT</h6>
+                    {this.state.tareas.map(tarea =>
+                        <> 
+                            <h5 className=""><span className="badge badge-secondary">{tarea.dia}</span></h5>
+                            <h6>{tarea.mes}</h6>
+                        </>
+                )}
+                    
                 </div>
                 <div className="col-8">
-                    <h3 className="text-uppercase"><strong>Operations Meeting</strong></h3>
-                    <ul className="list-inline">
-                        <li className="list-inline-item"><i className="fa fa-calendar-o" aria-hidden="true"></i> Friday</li>
-                        <li className="list-inline-item"><i className="fa fa-clock-o" aria-hidden="true"></i> 2:30 PM - 4:00 PM</li>
-                        <li className="list-inline-item"><i className="fa fa-location-arrow" aria-hidden="true"></i> Room 4019</li>
-                    </ul>
+                    {this.state.tareas.map(tarea =>
+                    <>
+                        <h3 className="text-uppercase"><strong>{tarea.titulo}</strong></h3>
+                        <ul className="list-inline">
+                        <li className="list-inline-item"><i className="fa fa-calendar-o" aria-hidden="true"></i>{` ${tarea.dia}-${tarea.mes}-${tarea.año}`}</li>
+                        <li className="list-inline-item"><i className="fa fa-clock-o" aria-hidden="true"></i> {tarea.hora}</li>
+                        <li className="list-inline-item"><i className="fa fa-location-arrow" aria-hidden="true"></i> {tarea.salon}</li>
+                        </ul>
+                    </>
+                    )}
+
                 </div>
                 <div className="col-2">
-                    <a href={props.pdf} className="material-icons floating-btn boton1">cloud_download</a>
+                    <a href={this.props.pdf} className="material-icons floating-btn boton1">cloud_download</a>
                 </div>
             </div>
-
         </div>
       </div>
       </>
     );
+}
 }
 
 export default Home;
