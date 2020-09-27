@@ -58,13 +58,16 @@
 .home-container{
   display: grid;
   grid-template-areas: 
-      "jumbo jumbo"
       "profile calendar"
   ;
+  grid-template-columns: 4fr 3fr;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .profile-data{
-  grid-area: "profile"
+  grid-area: "profile";
+  
 }
 
 .calendar-data{
