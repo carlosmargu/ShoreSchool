@@ -11,18 +11,18 @@ function Footer(props) {
                     <h5>Links</h5>
                     <ul className="list-unstyled">
                     {props.isLogged?(<>
-                        <li><Link to='/home'>Inicio</Link></li>
-                        <li><Link to='/acerca'>Semanas</Link></li>
-                        <li><Link to='/menu'>Actividades Entregadas</Link></li>
-                        <li><Link to='/contacto'>Contacto</Link></li>
-                        <li><Link to='/tools'>Herramientas</Link></li>
-                        <li><Link to='/comunicados'>Comunicados</Link></li>
+                        <Link to='/home'><li className="color">Inicio</li></Link>
+                        <Link to='/acerca'><li className="color">Semanas</li></Link>
+                        <Link to='/menu'><li className="color">Actividades Entregadas</li></Link>
+                        <Link to='/contacto'><li className="color">Contacto</li></Link>
+                        <Link to='/tools'><li className="color">Herramientas</li></Link>
+                        <Link to='/comunicados'><li className="color">Comunicados</li></Link>
                     </>) : (<>
-                        <li><Link to='/inicio'>Inicio</Link></li>
-                        <li><Link to='/contacto'>Contacto</Link></li>
-                        <li><Link to='/acerca'>Sobre nosotros</Link></li>
+                        <Link to='/inicio'> <li className="color">Inicio</li></Link>
+                        <Link to='/contacto'><li className="color">Contacto</li></Link>
+                        <Link to='/acerca'><li className="color">Sobre Nosotros</li></Link>
                     </>)}
-                    
+
                     </ul>
                 </div>
                 <div className="col-7 col-sm-5">
