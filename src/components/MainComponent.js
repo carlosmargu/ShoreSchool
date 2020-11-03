@@ -9,6 +9,7 @@ import Comunicados from './Comunicados/Comunicados.js'
 import Semanas from './Semanas/Semanas.js'
 import Comunicados1 from './Comunicados/Comunicados1.js'
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class Main extends Component {
 
@@ -37,7 +38,7 @@ class Main extends Component {
    return (
 
      <div>
-      {this.state.isLogged ?<Redirect to="/index" /> : <Redirect to="/inicio" />}
+      {this.props.isUserLoggedIn ?<Redirect to="/index" /> : <Redirect to="/inicio" />}
 
        <Header handleLogin={this.login} handleLogout={this.logout} isLogged={this.state.isLogged}/>
        <Switch location={this.props.location}>
@@ -54,4 +55,20 @@ class Main extends Component {
  }
 }
 
-export default Main;
+const mapStateToProps = state => {
+  return {
+      isUserLoggedIn: state.authenticationStore.isUserLoggedIn,
+      userLoggedIn: state.authenticationStore.UserLoggedIn,
+      loadingAuth: state.authenticationStore.loadingAuth,
+      handlingError: state.authenticationStore.handlingError
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {/*
+      onUserLogin: (username, password, onSuccessCallback) => dispatch(actionCreators.logIn(username, password, onSuccessCallback)),
+      cleanErrors: () => dispatch(actionCreators.cleanErrors())
+  */}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

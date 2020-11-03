@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Button, Jumbotron } from 'reactstrap';
 import './HomeComponent.css'
 import axios from 'axios'
+import { connect } from 'react-redux';
+import * as actionCreators from '../../store/actions'
 
 class Home extends Component {
     constructor(props) {
@@ -38,10 +40,10 @@ render() {
 
         <div  className="container col-lg-8 profile-data col-sm-12">
             <div className="row align-items-start">
-                <img className="profile-photo" src={this.props.imageUrl}/>
+                <img className="profile-photo" src={this.props.userData.imageUrl}/>
                 <div className="col-1 col-md m-1">
-                <h1 className="profile-user">{this.props.nombre} </h1>
-                <h4 className="">{this.props.grado}</h4>
+                <h1 className="profile-user">{this.props.userData.nombre} </h1>
+                <h4 className="">{this.props.userData.grado}</h4>
                 </div>
             </div>
         </div>
@@ -70,7 +72,7 @@ render() {
 
                 </div>
                 <div className="col-2">
-                    <a href={this.props.pdf} className="material-icons floating-btn boton1">cloud_download</a>
+                    <a href={this.props.userData.pdf} className="material-icons floating-btn boton1">cloud_download</a>
                 </div>
             </div>
         </div>
@@ -80,4 +82,19 @@ render() {
 }
 }
 
-export default Home;
+const mapStateToProps = state => {
+    return {
+        isUserLoggedIn: state.authenticationStore.isUserLoggedIn,
+        userLoggedIn: state.authenticationStore.userLoggedIn,
+        userData: state.authenticationStore.userData,
+    }
+  }
+  
+  const mapDispatchToProps = dispatch => {
+    return {
+        //onUserLogin: (username, password, onSuccessCallback) => dispatch(actionCreators.logIn(username, password, onSuccessCallback)),
+        //cleanErrors: () => dispatch(actionCreators.cleanErrors())
+    }
+  }
+  
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

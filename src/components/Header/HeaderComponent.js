@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import firebase from '../../instances/firebase'
+import { connect } from 'react-redux';
+import * as actionCreators from '../../store/actions'
 import './HeaderComponent.css';
 
 class Header extends Component {
@@ -39,14 +41,13 @@ class Header extends Component {
         this.toggleModal();
         const usuario = this.username.value;
         const password = this.password.value;
-
-        firebase.auth().signInWithEmailAndPassword(usuario,password)
+        this.props.onUserLogin(usuario, password);
+        /*firebase.auth().signInWithEmailAndPassword(usuario,password)
           .then(credential => {
             console.log(credential.user.uid);
-            let userInfo = firebase.database()
-                .ref(`users/${credential.user.uid}`)
-                .once('value')
-                .then(snapshot=>{
+            firebase.database().ref(`users/${credential.user.uid}`)
+                               .once('value')
+                               .then(snapshot=>{
                   console.log({userInfo: snapshot.val()})
                   const {imageUrl, pdf, nombre, grado} = snapshot.val();
                   this.props.handleLogin(usuario,imageUrl,pdf,nombre,grado);
@@ -54,7 +55,7 @@ class Header extends Component {
             
           }).catch(err=>{
             console.log({err})
-          })
+          })*/
         /*
         const usuario1=this.state.userItems.filter(usu=>usuario===usu.user);
           if(usuario1.length > 0){
@@ -100,7 +101,7 @@ class Header extends Component {
                 <Collapse isOpen={this.state.isNavOpen} navbar>
 
                     <Nav navbar>
-                    {this.props.isLogged? (   <>
+                    {this.props.isUserLoggedIn? (   <>
                       <NavItem>
                         <NavLink className="nav-link" to='/index'>Inicio</NavLink>
                       </NavItem>
@@ -135,7 +136,7 @@ class Header extends Component {
                     </Nav>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <Button color={this.props.isLogged?"danger":"success"} onClick={this.props.isLogged ? this.props.handleLogout : this.toggleModal}>{this.props.isLogged ? "Logout" : "Login"}</Button>
+                            <Button color={this.props.isUserLoggedIn?"danger":"success"} onClick={this.props.isUserLoggedIn ? this.props.onUserLogout : this.toggleModal}>{this.props.isUserLoggedIn ? "Logout" : "Login"}</Button>
                         </NavItem>
                     </Nav>
                   </Collapse>
@@ -172,4 +173,20 @@ class Header extends Component {
   }
 }
 
-export default Header;
+const mapStateToProps = state => {
+  return {
+      isUserLoggedIn: state.authenticationStore.isUserLoggedIn,
+      loadingAuth: state.authenticationStore.loadingAuth,
+      handlingError: state.authenticationStore.handlingError
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+      onUserLogin: (username, password, onSuccessCallback) => dispatch(actionCreators.logIn(username, password, onSuccessCallback)),
+      onUserLogout: () => dispatch(actionCreators.logOut()),
+      cleanErrors: () => dispatch(actionCreators.cleanErrors())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
