@@ -7,6 +7,7 @@ import Inicio from './Inicio/InicioComponent';
 import AboutUs from './Acerca/AboutUsComponent';
 import Comunicados from './Comunicados/Comunicados.js'
 import Semanas from './Semanas/Semanas.js'
+import Comunicados1 from './Comunicados/Comunicados1.js'
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
 class Main extends Component {
@@ -44,7 +45,7 @@ class Main extends Component {
          <Route path='/contacto' component={() => <ContactUs />} />
          <Route path='/inicio' component={() => <Inicio />} />
          <Route path='/acerca' component={() => <AboutUs />} />
-         <Route path='/comunicados' component={() => <Comunicados />} />
+         <Route path='/comunicados' component={() => <Comunicados1 />} />
          <Route path='/semanas' component={() => <Semanas />} />
        </Switch>
        <Footer isLogged={this.state.isLogged}/>
