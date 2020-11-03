@@ -3,6 +3,7 @@ import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron,B
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import firebase from '../../instances/firebase'
 import './HeaderComponent.css';
 
 class Header extends Component {
@@ -38,6 +39,23 @@ class Header extends Component {
         this.toggleModal();
         const usuario = this.username.value;
         const password = this.password.value;
+
+        firebase.auth().signInWithEmailAndPassword(usuario,password)
+          .then(credential => {
+            console.log(credential.user.uid);
+            let userInfo = firebase.database()
+                .ref(`users/${credential.user.uid}`)
+                .once('value')
+                .then(snapshot=>{
+                  console.log({userInfo: snapshot.val()})
+                  const {imageUrl, pdf, nombre, grado} = snapshot.val();
+                  this.props.handleLogin(usuario,imageUrl,pdf,nombre,grado);
+                });
+            
+          }).catch(err=>{
+            console.log({err})
+          })
+        /*
         const usuario1=this.state.userItems.filter(usu=>usuario===usu.user);
           if(usuario1.length > 0){
             if(usuario1[0].pass===password){
@@ -55,8 +73,9 @@ class Header extends Component {
             }else{
               console.log("Usuario no existe")
             }
-          }
-
+            
+          }*/
+      }
 
     getData (){
        axios.get(`https://api.npoint.io/e78e776fe063d5c9af41`, {})

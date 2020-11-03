@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
+    "firebase": "^8.0.0",
     "font-awesome": "^4.7.0",
     "materialize-css": "^1.0.0-rc.2",
     "node-modules": "^1.0.1",
