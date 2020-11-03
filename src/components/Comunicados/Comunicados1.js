@@ -47,12 +47,13 @@ render(){
                                 onSlideChange={() => console.log("slide change")}
                                 onSwipper={(swiper) => console.log(swiper)}
                             >
-                                <SwiperSlide className="carrusel">
-                                    {this.state.comunicados.map(comunicado => 
-                                        <h3>{comunicado.title}</h3>
-                                    )
-                                    }
+                                {this.state.comunicados.map(comunicado => 
+                                <SwiperSlide>
+                                    <h3>{comunicado.title}</h3>
+                                    <p>{comunicado.description}</p>
                                 </SwiperSlide>
+                                )
+                                }
                             </Swiper>
                         </div>
                     </div>
