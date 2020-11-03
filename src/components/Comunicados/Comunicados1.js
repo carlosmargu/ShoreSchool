@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/swiper.scss';
 import axios from 'axios';
@@ -56,12 +55,6 @@ render(){
                                 </SwiperSlide>
                             </Swiper>
                         </div>
-                    </div>
-                    <div className="line-division"></div>
-                    <div className="col-lg-3 register-zone">
-                        <img src="https://i.ibb.co/w4BR7fN/logoHS.png" alt="AQUI VA EL LOGO" className="imagen"/>
-                        <Link className="btn-solid-lg page-scroll" to="/acerca">Registrate</Link>
-                        <Link className="btn-solid-lg page-scroll" to="/acerca">Login</Link>
                     </div>
                 </div>
             </div>
