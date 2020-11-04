@@ -109,7 +109,7 @@ class Header extends Component {
                         <NavLink className="nav-link" to='/semanas'>Semanas</NavLink>
                       </NavItem>
                       <NavItem>
-                        <NavLink className="nav-link"  to='/menu'> Actividades Entregadas</NavLink>
+                        <NavLink className="nav-link"  to='/entregas'> Actividades Entregadas</NavLink>
                       </NavItem>
                       <NavItem>
                         <NavLink className="nav-link" to='/contacto'> Contacto</NavLink>
