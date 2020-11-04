@@ -7,7 +7,7 @@ import Inicio from './Inicio/InicioComponent';
 import AboutUs from './Acerca/AboutUsComponent';
 import Comunicados from './Comunicados/Comunicados.js'
 import Semanas from './Semanas/Semanas.js'
-import Comunicados1 from './Comunicados/Comunicados1.js'
+
 import Entregas from './Entregas/EntregasComponent.js'
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -47,7 +47,7 @@ class Main extends Component {
          <Route path='/contacto' component={() => <ContactUs />} />
          <Route path='/inicio' component={() => <Inicio />} />
          <Route path='/acerca' component={() => <AboutUs />} />
-         <Route path='/comunicados' component={() => <Comunicados1 />} />
+         <Route path='/comunicados' component={() => <Comunicados />} />
          <Route path='/semanas' component={() => <Semanas />} />
          <Route path='/entregas' component={() => <Entregas />} />
        </Switch>

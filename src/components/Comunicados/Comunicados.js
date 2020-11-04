@@ -29,13 +29,14 @@ class Comunicados extends Component {
       <div className="imagen">
       <div className="container1">
         <h1>Comunicados</h1>
-        <p>Los comunicados para el mes de Septiembre son los siguientes:</p>
+        <p>Los comunicados para este mes son los siguientes:</p>
       </div>
       <div>
 
       </div>
       <div className="Comunicados">
-        <Carousel>
+        <Carousel pagination={false}>
+          
           {
           this.state.comunicados.map(comunicado =>
             <Card title={comunicado.title} description={comunicado.description} />
