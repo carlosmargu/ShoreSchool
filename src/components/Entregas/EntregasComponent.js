@@ -52,11 +52,12 @@ export default function Entrega() {
                         <div class="col-sm-8">
                             <h1 className="tituloentre"> Sección de Entregas</h1>
                             <p>Sube el documento con la tarea correspondiente a la semana actual</p>
-                            <input type="file" id="BSbtninfo" onChange={readFile}/>
+                            <input type="file" onChange={readFile}/>
                              {pdfUrl
                                 ? pdfUrl.map(({ id, url }) => {
                                     return (
                                     <div key={id}>
+                                        <h6>Archivo cargado correctamente</h6>
                                         <embed src={url} width="600" height="600" 
                                         type="application/pdf"></embed>
                                         <div className="espaciobtnentre">
