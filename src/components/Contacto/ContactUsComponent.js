@@ -1,10 +1,36 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from "react";
 import './ContactUsComponent.css';
+import firebase from "../../instances/firebase";
 
-class ContactUs extends Component {
-    render() {
-        return (
-            <div>
+const ContactUs = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    firebase.database().ref("contactos")
+      .push({
+        name: name,
+        email: email,
+        message: message,
+      })
+      .then(() => {
+        alert("Su mensaje ha sido enviado👍");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
+
+  return (
+    <div>
                 <section className="contact">
                     <div className="content">
                         <h2>Contáctanos</h2>
@@ -38,18 +64,18 @@ class ContactUs extends Component {
                             </div>
                         </div>
                         <div className="contactForm">
-                            <form onSubmit={()=>alert("Tu mensaje ha sido enviado, nos comunicaremos lo más pronto contigo")}>
+                            <form onSubmit={handleSubmit}>
                                 <h2>Envia un mensaje</h2>
                                 <div className="inputBox">
-                                    <input type="text" name="" required="required" style={{"background-color":"#76B8F0"}}/>
+                                    <input type="text"  required="required" style={{"background-color":"#76B8F0"}} value={name} onChange={(e) => setName(e.target.value)}/>
                                     <span>Nombre Completo</span>
                                 </div>
                                 <div className="inputBox">
-                                    <input type="text" name="" required="required" style={{"background-color":"#76B8F0"}}/>
+                                    <input type="text" required="required" style={{"background-color":"#76B8F0"}} value={email} onChange={(e) => setEmail(e.target.value)}/>
                                     <span>Email</span>
                                 </div>
                                 <div className="inputBox">
-                                    <textarea required="required" style={{"background-color":"#76B8F0"}}></textarea>
+                                    <textarea required="required" style={{"background-color":"#76B8F0"}} value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
                                     <span>Escribe tu mensaje...</span>
                                 </div>
                                 <div className="inputBox">
@@ -60,8 +86,7 @@ class ContactUs extends Component {
                     </div>
                 </section>
             </div>
+  );
+};
 
-        );
-    }
-}
 export default ContactUs;

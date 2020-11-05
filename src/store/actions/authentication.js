@@ -5,6 +5,7 @@ import firebase from '../../instances/firebase';
 const auth = firebase.auth();
 const db = firebase.database();
 
+
 const startAuthLoading = () => {
   return {
       type: actionTypes.START_LOADING_AUTH
