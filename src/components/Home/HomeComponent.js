@@ -31,8 +31,8 @@ render() {
             <div class="container">
                 <div class="row">
                     <div class="col-sm col1">
-                        <h1>Colegio Sabana</h1>
-                        <p>Bienvenido al portal del Colegio Sabana</p>
+                        <h1 style={{"-webkit-text-stroke":"#195385 1.5px", color:"white"}}>Colegio Sabana</h1>
+                        <h3 style={{"-webkit-text-stroke":"#195385 0.7px", color:"white"}}>Bienvenido al portal del Colegio Sabana</h3>
                     </div>
                 </div>
                 <div class="row">
@@ -42,23 +42,23 @@ render() {
                         <img className="profile-photo" src={this.props.userData.imageUrl}/>
                     </div>
                     <div class="col-sm-3">
-                        <h1 className="profile-user">Estudiante</h1>
-                        <h2 className="profile-user">Nombre: {this.props.userData.nombre} </h2>
-                        <h4 className="">Grado: {this.props.userData.grado}</h4>
-                        <h4 className="">Genero: {this.props.userData.genero}</h4>
+                        <h2 className="profile-user" style={{"font-weight": "bold"}}>Estudiante</h2>
+                        <h4 className="profile-user">Nombre: {this.props.userData.nombre} </h4>
+                        <h4 className="profile-user">Grado: {this.props.userData.grado}</h4>
+                        <h4 className="profile-user">Genero: {this.props.userData.genero}</h4>
                     </div>
                     <div class="col-sm">
                     <div class="row">
                             <div class="col-sm col2">
-                                <h1 className="profile-user">Estudiante</h1>
+                                <h2 className="profile-user" style={{"font-weight": "bold"}}>Clases</h2>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-2">
                                 {this.state.tareas.map(tarea =>
                                     <> 
-                                        <h5 className=""><span className="badge badge-secondary">{tarea.dia}</span></h5>
-                                        <h6>{tarea.mes}</h6>
+                                        <h5 style={{"color": "white"}}><span className="badge badge-secondary">{tarea.dia}</span></h5>
+                                        <h6 style={{"color": "white"}}>{tarea.mes}</h6>
                                     </>
                                     )}
                             </div>
