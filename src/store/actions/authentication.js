@@ -33,7 +33,7 @@ const saveData = (userData) => {
   return {
     type: actionTypes.SAVE_DATA,
     payload: {
-      userData
+      userData: userData ? userData : {}
     }
   }
 }
@@ -41,12 +41,12 @@ const saveData = (userData) => {
 export const persistAuthentication = () => {
   return dispatch => {
       let userSession = localStorage.getItem('userSession');
-      if(!userSession) {
+      let userData = localStorage.getItem('userData')
+      if(!userSession || !userData) {
           dispatch(logOut());
       } else {
 
           userSession = JSON.parse(userSession);
-          let userData = localStorage.getItem('userData')
           userData = JSON.parse(userData);
           dispatch(saveSession(userSession.userEmail, userSession.token, userSession.localId));
           dispatch(saveData(userData));
