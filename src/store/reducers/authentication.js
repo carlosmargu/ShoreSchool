@@ -9,6 +9,7 @@ const initialState = {
     imageUrl: '',
     pdf: '',
     grado: '',
+    genero: '',
     idToken: '',
     localId: ''
   },

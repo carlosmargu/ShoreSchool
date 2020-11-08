@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
 .profile-photo{
-  height:200px;
+  height:250px;
+  border: #efab4f 3px solid;
 }
 
 .floating-btn{
@@ -19,7 +22,12 @@
     }
 
 .col1{
-  height: 500px;
+  height: 180px;
+}
+
+.col2{
+  height: 70px;
+  text-align: center;
 }
 
 .row-header{
@@ -44,11 +52,6 @@
 }
 
 .home-container{
-  /* display: grid;
-  grid-template-areas: 
-      "profile calendar"
-  ;
-  grid-template-columns: 4fr 3fr; */
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -57,7 +60,6 @@
   grid-area: "profile";
   padding-left:15%;
   padding-right:15%;
-  /* padding-top:10%; */
   padding-bottom:10px;
 }
 
@@ -74,3 +76,19 @@
   background-size: cover;
   height: 1000px;
 }
+
+.btnhome{
+  height: 50px;
+  width: 250px;
+}
+
+.link{
+  color: white;
+}
+
+.link:hover {
+	background-color: transparent;
+	color: white;
+	text-decoration: none;
+}
+
