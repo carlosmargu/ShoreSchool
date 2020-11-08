@@ -26,7 +26,21 @@ class Home extends Component {
 render() {
     return(
         <>
-       
+         <div className="fondo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm col1">
+                    One of three columns
+                    </div>
+                    <div class="col-sm">
+                    One of three columns
+                    </div>
+                    <div class="col-sm">
+                    One of three columns
+                    </div>
+                </div>
+            </div>
+        </div>
         <div className="fondo">
         <div className="container">
                 <div className="row row-header">

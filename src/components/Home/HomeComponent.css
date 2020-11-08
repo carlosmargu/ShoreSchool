@@ -18,7 +18,9 @@
     padding: 20px;
     }
 
-
+.col1{
+  height: 500px;
+}
 
 .row-header{
     margin:0px auto;
@@ -68,7 +70,7 @@
 }
 
 .fondo{
-  background-image: url("https://i.ibb.co/kqtYYM5/locker.png");
-  background-size: auto;
-  height:1000px;
+  background-image: url("https://i.ibb.co/1KPMKSv/background.jpg");
+  background-size: cover;
+  height: 1000px;
 }
