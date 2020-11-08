@@ -7,6 +7,7 @@ import Inicio from './Inicio/InicioComponent';
 import AboutUs from './Acerca/AboutUsComponent';
 import Comunicados from './Comunicados/Comunicados.js'
 import Semanas from './Semanas/Semanas.js'
+import Page404 from './Page404/Page404.js'
 
 //import Entregas from './Entregas/EntregasComponent.js'
 import Entregas from './Entregas/EntregaPage.js'
@@ -41,18 +42,18 @@ class Main extends Component {
    return (
 
      <div>
-      {this.props.isUserLoggedIn ?<Redirect to="/index" /> : <Redirect to="/inicio" />}
-
+      {this.props.isUserLoggedIn ?<Redirect  to="/index" /> : <Redirect to="/inicio" />}
        <Header handleLogin={this.login} handleLogout={this.logout} isLogged={this.state.isLogged}/>
        <Switch location={this.props.location}>
-         <Route path='/index' component={() => <Home username={this.state.username} imageUrl={this.state.imageUrl} pdf={this.state.pdf} nombre={this.state.nombre} grado={this.state.grado}/>} />
-         <Route path='/contacto' component={() => <ContactUs />} />
-         <Route path='/inicio' component={() => <Inicio />} />
-         <Route path='/acerca' component={() => <AboutUs />} />
-         <Route path='/comunicados' component={() => <Comunicados />} />
-         <Route path='/semanas' component={() => <Semanas />} />
-         <Route path='/entregas/:id' component={(props) => <EntregaIndividual {...props}/>} />
-         <Route path='/entregas' component={() => <Entregas />} />
+         <Route exact path='/index' component={() => <Home username={this.state.username} imageUrl={this.state.imageUrl} pdf={this.state.pdf} nombre={this.state.nombre} grado={this.state.grado}/>} />
+         <Route exact path='/contacto' component={() => <ContactUs />} />
+         <Route exact path='/inicio' component={() => <Inicio />} />
+         <Route exact path='/acerca' component={() => <AboutUs />} />
+         <Route exact path='/comunicados' component={() => <Comunicados />} />
+         <Route exact path='/semanas' component={() => <Semanas />} />
+         <Route exact path='/entregas/:id' component={(props) => <EntregaIndividual {...props}/>} />
+         <Route exact path='/entregas' component={() => <Entregas />} />
+         <Route component={() => <Page404 />} />
        </Switch>
        <Footer isLogged={this.state.isLogged}/>
      </div>
