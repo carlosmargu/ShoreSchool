@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Page404.css';
+import { Link } from 'react-router-dom';
 
 class Page404 extends Component {
     render() {
@@ -13,7 +14,7 @@ class Page404 extends Component {
 				            <span>La página no se puede encontrar</span>
 			            </div>
 			            <p>No podemos encontrar la página que buscabas. Por favor revisa la URL que estas ingresando.</p>
-			            <a href="#" className="go-back">Regresar a la página de Inicio</a>
+						<Link className="go-back" to="/contacto"><button type="button" className="btn btn-primary btn404">Nos quieres contactar?</button></Link>
 		            </div>   
 	            </div>   
             </div>
