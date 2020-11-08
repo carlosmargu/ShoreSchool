@@ -39,8 +39,9 @@ export default function EntregaPage(props){
   }
 
   return (
-    <div>
+    <div className='actividad--container'>
       {renderEntregas()}
+      <div></div>
     </div>
   )
 

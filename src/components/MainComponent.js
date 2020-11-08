@@ -51,7 +51,7 @@ class Main extends Component {
          <Route path='/acerca' component={() => <AboutUs />} />
          <Route path='/comunicados' component={() => <Comunicados />} />
          <Route path='/semanas' component={() => <Semanas />} />
-         <Route path='/entregas/:id' component={() => <EntregaIndividual />} />
+         <Route path='/entregas/:id' component={(props) => <EntregaIndividual {...props}/>} />
          <Route path='/entregas' component={() => <Entregas />} />
        </Switch>
        <Footer isLogged={this.state.isLogged}/>
