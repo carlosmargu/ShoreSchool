@@ -1,0 +1,19 @@
+.actividad{
+  border: 1px solid gray;
+  border-radius: 20px;
+  margin: 20px;
+  word-wrap: normal; 
+  padding: 20px;
+  cursor: pointer;
+  color: aliceblue;
+  background-color: #195385;
+}
+
+.actividad--titulo{
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.actividad--cuerpo{
+  font-size: small;
+}

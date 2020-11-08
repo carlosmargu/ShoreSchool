@@ -4,7 +4,7 @@ import { v4 as uuid } from 'uuid';
 import { Jumbotron } from 'reactstrap';
 import './EntregasComponent.css';
 
-export default function Entrega() {
+export default function Entrega(props) {
     const [pdfUrl, setPdfUrl] = useState([]);
     const readFile = async(e) =>{
         const file = e.target.files[0];

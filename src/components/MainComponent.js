@@ -8,7 +8,9 @@ import AboutUs from './Acerca/AboutUsComponent';
 import Comunicados from './Comunicados/Comunicados.js'
 import Semanas from './Semanas/Semanas.js'
 
-import Entregas from './Entregas/EntregasComponent.js'
+//import Entregas from './Entregas/EntregasComponent.js'
+import Entregas from './Entregas/EntregaPage.js'
+import EntregaIndividual from './Entregas/EntregasComponent.js'
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -49,6 +51,7 @@ class Main extends Component {
          <Route path='/acerca' component={() => <AboutUs />} />
          <Route path='/comunicados' component={() => <Comunicados />} />
          <Route path='/semanas' component={() => <Semanas />} />
+         <Route path='/entregas/:id' component={() => <EntregaIndividual />} />
          <Route path='/entregas' component={() => <Entregas />} />
        </Switch>
        <Footer isLogged={this.state.isLogged}/>
