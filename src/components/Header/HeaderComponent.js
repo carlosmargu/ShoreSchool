@@ -37,45 +37,11 @@ class Header extends Component {
      }
 
      handleLogin(event) {
-      event.preventDefault();
+        event.preventDefault();
         this.toggleModal();
         const usuario = this.username.value;
         const password = this.password.value;
         this.props.onUserLogin(usuario, password);
-        /*firebase.auth().signInWithEmailAndPassword(usuario,password)
-          .then(credential => {
-            console.log(credential.user.uid);
-            firebase.database().ref(`users/${credential.user.uid}`)
-                               .once('value')
-                               .then(snapshot=>{
-                  console.log({userInfo: snapshot.val()})
-                  const {imageUrl, pdf, nombre, grado} = snapshot.val();
-                  this.props.handleLogin(usuario,imageUrl,pdf,nombre,grado);
-                });
-            
-          }).catch(err=>{
-            console.log({err})
-          })*/
-        /*
-        const usuario1=this.state.userItems.filter(usu=>usuario===usu.user);
-          if(usuario1.length > 0){
-            if(usuario1[0].pass===password){
-              const imageUrl = usuario1[0].img
-              const pdf = usuario1[0].pdf
-              const nombre = usuario1[0].nombre
-              const grado = usuario1[0].grado
-              console.log("Usuario y contraseña correcto")
-              this.props.handleLogin(usuario,imageUrl,pdf,nombre,grado);
-
-              //this.props.history.go('/index');
-            }else{
-              console.log("Contraseña incorrectos")
-            }
-            }else{
-              console.log("Usuario no existe")
-            }
-            
-          }*/
       }
 
     getData (){

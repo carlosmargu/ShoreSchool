@@ -12,7 +12,7 @@ import Page404 from './Page404/Page404.js'
 //import Entregas from './Entregas/EntregasComponent.js'
 import Entregas from './Entregas/EntregaPage.js'
 import EntregaIndividual from './Entregas/EntregasComponent.js'
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter, matchPath } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class Main extends Component {
@@ -29,6 +29,48 @@ class Main extends Component {
     }
   }
 
+  loggedInPages = [
+    '/index',
+    '/semanas',
+    '/entregas',
+    '/comunicados'
+  ]
+
+  loggedOutPages = [
+    '/inicio',
+    '/acerca',
+  ]
+
+  checkLogin(){
+    console.log({loooooooo:this.props.location})
+    let location = this.props.location.pathname;
+    if (this.props.isUserLoggedIn){
+      console.log('deggg')
+      for (let page of this.loggedOutPages){
+        if (matchPath(location, {path: page}) || location.startsWith(page)){
+          this.props.history.push('/index')
+          return
+        }
+      }
+    } else {
+      console.log('deslogggg')
+      for (let page of this.loggedInPages){
+        if (matchPath(location, {path: page}) || location.startsWith(page)){
+          this.props.history.push('/inicio')
+          return
+        }
+      }
+    }
+  }
+
+  componentDidMount(){
+    this.checkLogin();
+  }
+
+  componentDidUpdate(){
+    this.checkLogin();
+  }
+
   login = (username,imageUrl,pdf, nombre, grado)=>{
     this.setState({isLogged:true,username,imageUrl,pdf, nombre, grado})
 
@@ -42,7 +84,7 @@ class Main extends Component {
    return (
 
      <div>
-      {this.props.isUserLoggedIn ?<Redirect  to="/index" /> : <Redirect to="/inicio" />}
+      {/*this.props.isUserLoggedIn ?<Redirect  to="/index" /> : <Redirect to="/inicio" />*/}
        <Header handleLogin={this.login} handleLogout={this.logout} isLogged={this.state.isLogged}/>
        <Switch location={this.props.location}>
          <Route exact path='/index' component={() => <Home username={this.state.username} imageUrl={this.state.imageUrl} pdf={this.state.pdf} nombre={this.state.nombre} grado={this.state.grado}/>} />
@@ -77,4 +119,4 @@ const mapDispatchToProps = dispatch => {
   */}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Main));
