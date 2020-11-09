@@ -33,7 +33,7 @@ const ContactUs = () => {
     <div>
         <section className="contact">
             <div className="content">
-                <h2>Contáctanos</h2>
+                <h1>Contáctanos</h1>
                 <p>Si deseas información sobre los procesos de matricula del colegio, no dudes en llenar el formulario.</p>
             </div>
             <div className="containerflex">
