@@ -31,10 +31,10 @@ export default function EntregaPage(props){
   const renderEntregas = () => {
     return actividades.map(actividad=>(
       
-        <div className="actividad" onClick={()=>handleClick(actividad.id)}>
+        <button className="actividad" onClick={()=>handleClick(actividad.id)}>
           <span className="actividad--titulo">{actividad.titulo}</span><br/>
           <span className="actividad--cuerpo">{actividad.descripcion}</span><br/>
-        </div>
+        </button>
         
       
     ))
