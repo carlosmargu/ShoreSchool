@@ -3,7 +3,6 @@ import './HomeComponent.css'
 import { Link } from 'react-router-dom';
 import axios from 'axios'
 import { connect } from 'react-redux';
-import * as actionCreators from '../../store/actions'
 
 class Home extends Component {
     constructor(props) {
@@ -117,11 +116,6 @@ const mapStateToProps = state => {
     }
   }
   
-  const mapDispatchToProps = dispatch => {
-    return {
-        //onUserLogin: (username, password, onSuccessCallback) => dispatch(actionCreators.logIn(username, password, onSuccessCallback)),
-        //cleanErrors: () => dispatch(actionCreators.cleanErrors())
-    }
-  }
+
   
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps)(Home);

@@ -88,7 +88,7 @@ class Main extends Component {
        <Header handleLogin={this.login} handleLogout={this.logout} isLogged={this.state.isLogged}/>
        <Switch location={this.props.location}>
          <Route exact path='/' component={() => <Home username={this.state.username} imageUrl={this.state.imageUrl} pdf={this.state.pdf} nombre={this.state.nombre} grado={this.state.grado}/>} />
-         <Route exact path='/contacto' component={() => <ContactUs />} />
+         <Route exact path='/contacto' component={ContactUs} />
          <Route exact path='/inicio' component={() => <Inicio />} />
          <Route exact path='/acerca' component={() => <AboutUs />} />
          <Route exact path='/comunicados' component={() => <Comunicados />} />
