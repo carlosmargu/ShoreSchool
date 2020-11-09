@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron,Button, Modal, ModalHeader, ModalBody,Form, FormGroup, Input, Label } from 'reactstrap';
+import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem,Button, Modal, ModalHeader, ModalBody,Form, FormGroup, Input, Label } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
-import firebase from '../../instances/firebase'
 import { connect } from 'react-redux';
 import * as actionCreators from '../../store/actions'
 import * as errorTypes from '../../staticValues/firebaseErrors'

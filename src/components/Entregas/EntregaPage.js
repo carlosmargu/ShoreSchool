@@ -26,7 +26,6 @@ export default function EntregaPage(props){
   const handleClick = (id)=>{
     console.log(id)
     history.push(`/entregas/${id}`)
-    //console.log('hoal')
   }
 
   const renderEntregas = () => {
@@ -49,7 +48,6 @@ export default function EntregaPage(props){
           {renderEntregas()}
         </div>
         <div className="actividad--imagen col-sm-6" id="cientifico-hombre">
-          {/* <img className="img-fluid" id="cientifico-hombre" src="https://i.ibb.co/ygJrtr1/Imagen1.png" alt="" /> */}
         </div>
       </div>
     </div>

@@ -39,7 +39,7 @@ render() {
                     <div class="col-sm-3">
                     </div>
                     <div class="col-sm-2.5">
-                        <img className="profile-photo" src={this.props.userData.imageUrl}/>
+                        <img className="profile-photo" src={this.props.userData.imageUrl} alt="fotoperfil"/>
                     </div>
                     <div class="col-sm-3">
                         <h2 className="profile-user" style={{"font-weight": "bold"}}>Estudiante</h2>

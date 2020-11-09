@@ -93,10 +93,7 @@ function Entrega(props) {
                         </div>
                     </div>
                 </div>
-            
             </Jumbotron>
-            
-            
         </div>
     );
 }

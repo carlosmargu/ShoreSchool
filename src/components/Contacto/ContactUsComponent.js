@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import './ContactUsComponent.css';
 import firebase from "../../instances/firebase";
 
@@ -18,7 +18,7 @@ const ContactUs = () => {
         message: message,
       })
       .then(() => {
-        alert("Su mensaje ha sido enviado👍🙈");
+        alert("Su mensaje ha sido enviado👍");
       })
       .catch((error) => {
         alert(error.message);

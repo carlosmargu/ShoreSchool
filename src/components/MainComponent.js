@@ -85,7 +85,6 @@ class Main extends Component {
    return (
 
      <div>
-      {/*this.props.isUserLoggedIn ?<Redirect  to="/index" /> : <Redirect to="/inicio" />*/}
        <Header handleLogin={this.login} handleLogout={this.logout} isLogged={this.state.isLogged}/>
        <Switch location={this.props.location}>
          <Route exact path='/' component={() => <Home username={this.state.username} imageUrl={this.state.imageUrl} pdf={this.state.pdf} nombre={this.state.nombre} grado={this.state.grado}/>} />

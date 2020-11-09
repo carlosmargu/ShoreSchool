@@ -8,17 +8,7 @@ const localizer = momentLocalizer(moment)
 require('moment/locale/es.js');
   
 
-//array de eventos
-const myEventsList= [{
-  title: "Entrega Taller 1",
-  start: new Date('2020-11-03 10:22:00'),
-  end: new Date('2020-11-03 10:42:00')
-},
-{
-  title: "string",
-   start: new Date('2019-05-05 12:22:00'),
-  end: new Date('2019-05-05 13:42:00')
-}]
+ 
 class Semanas extends Component {
 
   constructor(props){
@@ -63,9 +53,7 @@ class Semanas extends Component {
                             next: "sig",
                             previous: "ant",
                             today: "Hoy",
-                            month: "Mes",
-                            //week: "Semana",
-                            //day: "Día"
+                            month: "Mes"
                             }}
                     views={[
                       'month',
