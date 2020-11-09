@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Button, Jumbotron } from 'reactstrap';
 import './HomeComponent.css'
 import { Link } from 'react-router-dom';
 import axios from 'axios'
