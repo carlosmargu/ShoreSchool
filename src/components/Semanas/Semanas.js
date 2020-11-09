@@ -64,9 +64,13 @@ class Semanas extends Component {
                             previous: "ant",
                             today: "Hoy",
                             month: "Mes",
-                            week: "Semana",
-                            day: "Día"
+                            //week: "Semana",
+                            //day: "Día"
                             }}
+                    views={[
+                      'month',
+                      'agenda'
+                    ]}
                     />
             </div>
     </div>

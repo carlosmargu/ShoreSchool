@@ -6,7 +6,9 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import firebase from '../../instances/firebase'
 import { connect } from 'react-redux';
 import * as actionCreators from '../../store/actions'
+import * as errorTypes from '../../staticValues/firebaseErrors'
 import './HeaderComponent.css';
+import {ReactComponent as SpinnerInfinity} from '../../assets/spinner/spinner-infinity.svg'
 
 class Header extends Component {
 
@@ -34,11 +36,12 @@ class Header extends Component {
        this.setState({
          isModalOpen: !this.state.isModalOpen
        });
+       this.props.cleanErrors();
      }
 
      handleLogin(event) {
         event.preventDefault();
-        this.toggleModal();
+        //this.toggleModal();
         const usuario = this.username.value;
         const password = this.password.value;
         this.props.onUserLogin(usuario, password);
@@ -56,6 +59,43 @@ class Header extends Component {
    componentDidMount() {
       this.getData()
       }
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.isUserLoggedIn){
+      return {
+        isModalOpen: false,
+      }
+    } else return {}
+  }
+
+  emailHasErrors = () => {
+    let emailsErrors = [errorTypes.INVALID_EMAIL, errorTypes.EMAIL_NOT_FOUND]
+    return emailsErrors.includes(this.props.handlingError)
+  }
+
+  passwordHasErrors = () => {
+      let passwordErrors = [errorTypes.INVALID_PASSWORD]
+      return passwordErrors.includes(this.props.handlingError)
+  }
+
+  renderEmailError = () => {
+    switch (this.props.handlingError){
+        case errorTypes.INVALID_EMAIL:
+            return (<p className='login--form--error-text'>Por favor, ingrese un correo válido</p>);
+        case errorTypes.EMAIL_NOT_FOUND:
+            return (<p className='login--form--error-text'>La cuenta ingresada no existe</p>);
+        default: return;
+    }
+  }
+
+  renderPasswordError = () => {
+      switch (this.props.handlingError){
+          case errorTypes.INVALID_PASSWORD:
+              return (<p className='login--form--error-text'>Contraseña incorrecta</p>);
+          default: return;
+      }
+  }
+
   render() {
     return(
 
@@ -69,7 +109,7 @@ class Header extends Component {
                     <Nav navbar>
                     {this.props.isUserLoggedIn? (   <>
                       <NavItem>
-                        <NavLink className="nav-link" to='/index'>Inicio</NavLink>
+                        <NavLink className="nav-link" to='/'>Inicio</NavLink>
                       </NavItem>
                       <NavItem>
                         <NavLink className="nav-link" to='/semanas'>Semanas</NavLink>
@@ -113,13 +153,17 @@ class Header extends Component {
                     <FormGroup>
                         <Label htmlFor="username">Username</Label>
                         <Input type="text" id="username" name="username"
-                            innerRef={(input) => this.username = input} />
+                            innerRef={(input) => this.username = input}
+                            onChange={this.props.cleanErrors} />
                     </FormGroup>
+                    {this.renderEmailError()}
                     <FormGroup>
                         <Label htmlFor="password">Password</Label>
                         <Input type="password" id="password" name="password"
-                            innerRef={(input) => this.password = input}  />
+                            innerRef={(input) => this.password = input}
+                            onChange={this.props.cleanErrors}  />
                     </FormGroup>
+                    {this.renderPasswordError()}
                     <FormGroup check>
                         <Label check>
                             <Input type="checkbox" name="remember"
@@ -128,6 +172,7 @@ class Header extends Component {
                         </Label>
                     </FormGroup>
                     <Button type="submit" value="submit" color="primary" onClick={this.handleLogin}>Login</Button>
+                    {this.props.loadingAuth ? (<SpinnerInfinity height="96px"/>): ''}
                   </Form>
               </ModalBody>
           </Modal>
@@ -140,7 +185,7 @@ const mapStateToProps = state => {
   return {
       isUserLoggedIn: state.authenticationStore.isUserLoggedIn,
       loadingAuth: state.authenticationStore.loadingAuth,
-      handlingError: state.authenticationStore.handlingError
+      handlingError: state.authenticationStore.handlingError,
   }
 }
 

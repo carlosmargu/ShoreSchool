@@ -30,10 +30,11 @@ class Main extends Component {
   }
 
   loggedInPages = [
-    '/index',
     '/semanas',
     '/entregas',
-    '/comunicados'
+    '/entregas/:id',
+    '/comunicados',
+    '/',
   ]
 
   loggedOutPages = [
@@ -42,22 +43,22 @@ class Main extends Component {
   ]
 
   checkLogin(){
-    console.log({loooooooo:this.props.location})
-    let location = this.props.location.pathname;
-    if (this.props.isUserLoggedIn){
-      console.log('deggg')
-      for (let page of this.loggedOutPages){
-        if (matchPath(location, {path: page}) || location.startsWith(page)){
-          this.props.history.push('/index')
-          return
+    if (this.props.firebaseInited){
+      console.log({loooooooo:this.props.location})
+      let location = this.props.location.pathname;
+      if (this.props.isUserLoggedIn){
+        for (let page of this.loggedOutPages){
+          if (matchPath(location, {path: page, exact: true})){
+            this.props.history.push('/')
+            return
+          }
         }
-      }
-    } else {
-      console.log('deslogggg')
-      for (let page of this.loggedInPages){
-        if (matchPath(location, {path: page}) || location.startsWith(page)){
-          this.props.history.push('/inicio')
-          return
+      } else {
+        for (let page of this.loggedInPages){
+          if (matchPath(location, {path: page, exact: true})){
+            this.props.history.push('/inicio')
+            return
+          }
         }
       }
     }
@@ -87,7 +88,7 @@ class Main extends Component {
       {/*this.props.isUserLoggedIn ?<Redirect  to="/index" /> : <Redirect to="/inicio" />*/}
        <Header handleLogin={this.login} handleLogout={this.logout} isLogged={this.state.isLogged}/>
        <Switch location={this.props.location}>
-         <Route exact path='/index' component={() => <Home username={this.state.username} imageUrl={this.state.imageUrl} pdf={this.state.pdf} nombre={this.state.nombre} grado={this.state.grado}/>} />
+         <Route exact path='/' component={() => <Home username={this.state.username} imageUrl={this.state.imageUrl} pdf={this.state.pdf} nombre={this.state.nombre} grado={this.state.grado}/>} />
          <Route exact path='/contacto' component={() => <ContactUs />} />
          <Route exact path='/inicio' component={() => <Inicio />} />
          <Route exact path='/acerca' component={() => <AboutUs />} />
@@ -108,7 +109,8 @@ const mapStateToProps = state => {
       isUserLoggedIn: state.authenticationStore.isUserLoggedIn,
       userLoggedIn: state.authenticationStore.UserLoggedIn,
       loadingAuth: state.authenticationStore.loadingAuth,
-      handlingError: state.authenticationStore.handlingError
+      handlingError: state.authenticationStore.handlingError,
+      firebaseInited: state.authenticationStore.firebaseInited,
   }
 }
 

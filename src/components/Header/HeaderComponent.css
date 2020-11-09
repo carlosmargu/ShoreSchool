@@ -2,3 +2,7 @@
 .navbar-dark {
     background-color: #195385;
 }
+
+.login--form--error-text{
+    color: red;
+}

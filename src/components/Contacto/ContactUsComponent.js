@@ -18,7 +18,7 @@ const ContactUs = () => {
         message: message,
       })
       .then(() => {
-        alert("Su mensaje ha sido enviado👍");
+        alert("Su mensaje ha sido enviado👍🙈");
       })
       .catch((error) => {
         alert(error.message);

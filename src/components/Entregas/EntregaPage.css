@@ -17,3 +17,12 @@
 .actividad--cuerpo{
   font-size: small;
 }
+
+#cientifico-hombre{
+  min-height: 80vh;
+  background-image: url("https://i.ibb.co/ygJrtr1/Imagen1.png");
+  background-size: cover;
+  /* background-attachment: fixed; */
+  background-repeat: no-repeat;
+  
+}

@@ -31,17 +31,27 @@ export default function EntregaPage(props){
 
   const renderEntregas = () => {
     return actividades.map(actividad=>(
-      <div className="actividad" onClick={()=>handleClick(actividad.id)}>
-        <span className="actividad--titulo">{actividad.titulo}</span><br/>
-        <span className="actividad--cuerpo">{actividad.descripcion}</span><br/>
-      </div>
+      
+        <div className="actividad" onClick={()=>handleClick(actividad.id)}>
+          <span className="actividad--titulo">{actividad.titulo}</span><br/>
+          <span className="actividad--cuerpo">{actividad.descripcion}</span><br/>
+        </div>
+        
+      
     ))
   }
 
   return (
-    <div className='actividad--container'>
-      {renderEntregas()}
-      <div></div>
+    <div className='container'>
+      <h1>Actividades</h1>
+      <div className='row'>
+        <div className="col-sm-6">
+          {renderEntregas()}
+        </div>
+        <div className="actividad--imagen col-sm-6" id="cientifico-hombre">
+          {/* <img className="img-fluid" id="cientifico-hombre" src="https://i.ibb.co/ygJrtr1/Imagen1.png" alt="" /> */}
+        </div>
+      </div>
     </div>
   )
 

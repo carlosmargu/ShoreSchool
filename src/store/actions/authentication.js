@@ -38,6 +38,23 @@ const saveData = (userData) => {
   }
 }
 
+const errorEmailFirebase = (error) => {
+    return {
+        type: actionTypes.ERROR_FIREBASE,
+        payload: {
+            error
+        }
+    };
+}
+
+export const cleanErrors = () => {
+  return {
+      type: actionTypes.CLEAN_ERRORS,
+      payload: {}
+  }
+}
+
+
 export const persistAuthentication = () => {
   return dispatch => {
       let userSession = localStorage.getItem('userSession');
@@ -91,13 +108,14 @@ export const logIn = (email, password, onSuccessCallback) => {
           }).catch(error => {
             console.log({error});
             dispatch(endAuthLoading());
+            dispatch()
           })
         });
         
         
       }).catch(error => {
         console.log({error});
-        //dispatch(errorEmailFirebase(error.response.data.error.message));
+        dispatch(errorEmailFirebase(error.code));
         dispatch(endAuthLoading());
       })
           
@@ -147,26 +165,3 @@ export const logOut = () => {
       type: actionTypes.LOG_OUT
   };
 };
-
-const errorEmailFirebase = (error) => {
-    return {
-        type: actionTypes.ERROR_FIREBASE,
-        payload: {
-            error
-        }
-    };
-}
-
-export const cleanErrors = () => {
-    /*return dispatch => {
-      dispatch(
-        {
-        type: actionTypes.CLEAN_ERRORS,
-        payload: {}
-      });
-    }*/
-    return {
-        type: actionTypes.CLEAN_ERRORS,
-        payload: {}
-    }
-  }
